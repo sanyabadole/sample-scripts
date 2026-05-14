@@ -30,10 +30,5 @@ Pin versions when you freeze an environment (`conda export`, `renv::snapshot()`,
 1. Notebooks `01`–`10` (Python).
 2. `scripts/r/01` … `10` as needed: h5ad → Seurat → sketch or full PCA/UMAP → Harmony → QC figures → optional merge / SCE / small UMAP.
 
-```bash
-export B_CELL_ATLAS_DATA=/path/to/data
-python scripts/python/01_inventory_scpca_rds_paths.py
-Rscript scripts/r/01_seurat_from_scanpy_h5ad.R
-```
 
 HTML figures in `figures/html/` open in a browser. R scripts write PNGs under `$B_CELL_ATLAS_DATA/figures/` unless you change paths in the script.
