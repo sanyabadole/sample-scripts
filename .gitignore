@@ -1,0 +1,60 @@
+# data files — too large for git
+*.h5ad
+*.h5mu
+*.loom
+*.rds
+*.RDS
+*.rda
+*.RData
+*.mtx
+*.gz
+*.tar
+*.bam
+*.bai
+*.vcf
+*.bed
+*.tsv.gz
+
+# data directories
+data/raw/
+data/temp/
+cache/
+scripts/cache/
+spatial/data/
+spatial/results/
+
+# personal/private files
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.numbers
+*.csv
+*.pdf
+
+# messy working directories
+lab_scripts/
+scripts/
+spatial/
+DVA Final Project/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# system
+.DS_Store
+Icon
+~$*

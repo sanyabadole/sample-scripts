@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Plots Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #081242;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .plot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .plot-container {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .plot-container h2 {
+            color: #444;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .plot-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .dotplot-container {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .dotplot-frame {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+        .section-title {
+            color: #ffffff;
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 1.8em;
+        }
+        .image-container {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .abundance-container {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .abundance-frame {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+        .comparison-container {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .comparison-frame {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .plot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Combined Plots Dashboard</h1>
+
+        <!-- UMAP Comparison Section -->
+        <h2 class="section-title">UMAP Comparison</h2>
+        <div class="comparison-container">
+            <h2>UMAP Plot With and Without Harmony</h2>
+            <img src="umap_comparison.png" alt="UMAP Comparison" style="width: 100%; height: auto; border-radius: 4px;">
+        </div>
+
+        <!-- All Plots With Harmony Section -->
+        <h2 class="section-title">All Plots With Harmony Batch Correction</h2>
+        
+        <!-- Dot Plot With Harmony -->
+        <div class="dotplot-container">
+            <h2>Dotplot With Harmony Batch Correction</h2>
+            <iframe class="dotplot-frame" src="Dotplot_with.html"></iframe>
+        </div>
+
+        <!-- UMAPs with Harmony -->
+        <div class="plot-grid">
+            <div class="image-container">
+                <h2>CD19 UMAP</h2>
+                <img src="CD19_with.jpg" alt="CD19 UMAP with Harmony">
+            </div>
+            <div class="image-container">
+                <h2>CD27 UMAP</h2>
+                <img src="CD27_with.jpg" alt="CD27 UMAP with Harmony">
+            </div>
+            <div class="image-container">
+                <h2>CD79A UMAP</h2>
+                <img src="CD79A_without.jpg" alt="CD79A UMAP with Harmony">
+            </div>
+            <div class="image-container">
+                <h2>IGHD UMAP</h2>
+                <img src="IGHD_with.jpg" alt="IGHD UMAP with Harmony">
+            </div>
+            <div class="image-container">
+                <h2>IGHM UMAP</h2>
+                <img src="IGHM_with.png" alt="IGHM UMAP with Harmony">
+            </div>
+            <div class="image-container">
+                <h2>JCHAIN UMAP</h2>
+                <img src="JCHAIN_with.jpg" alt="JCHAIN UMAP with Harmony">
+            </div>
+            <div class="image-container">
+                <h2>MS4A1 UMAP</h2>
+                <img src="MS4A1_with.jpg" alt="MS4A1 UMAP with Harmony">
+            </div>
+        </div>
+
+        <!-- Abundance Plot With Harmony -->
+        <div class="abundance-container">
+            <h2>Abundance Plot With Harmony Batch Correction</h2>
+            <iframe class="abundance-frame" src="abundance_plot_with_harmony.html"></iframe>
+        </div>
+
+        <!-- All Plots Without Harmony Section -->
+        <h2 class="section-title">All Plots Without Harmony Batch Correction</h2>
+        
+        <!-- Dot Plot Without Harmony -->
+        <div class="dotplot-container">
+            <h2>Dotplot Without Harmony Batch Correction</h2>
+            <iframe class="dotplot-frame" src="Dotplot_without.html"></iframe>
+        </div>
+
+        <!-- Interactive UMAPs Without Harmony -->
+        <div class="plot-grid">
+            <div class="plot-container">
+                <h2>CD19 Plot</h2>
+                <iframe class="plot-frame" src="CD19_without.html"></iframe>
+            </div>
+            <div class="plot-container">
+                <h2>CD27 Plot</h2>
+                <iframe class="plot-frame" src="CD27_without.html"></iframe>
+            </div>
+            <div class="plot-container">
+                <h2>CD79A Plot</h2>
+                <iframe class="plot-frame" src="CD79A_without.html"></iframe>
+            </div>
+            <div class="plot-container">
+                <h2>IGHD Plot</h2>
+                <iframe class="plot-frame" src="IGHD_without.html"></iframe>
+            </div>
+            <div class="plot-container">
+                <h2>IGHM Plot</h2>
+                <iframe class="plot-frame" src="IGHM_without.html"></iframe>
+            </div>
+            <div class="plot-container">
+                <h2>JCHAIN Plot</h2>
+                <iframe class="plot-frame" src="JCHAIN_without.html"></iframe>
+            </div>
+            <div class="plot-container">
+                <h2>MS4A1 Plot</h2>
+                <iframe class="plot-frame" src="MS4A1_without.html"></iframe>
+            </div>
+        </div>
+
+        <!-- Abundance Plot Without Harmony -->
+        <div class="abundance-container">
+            <h2>Abundance Plot Without Harmony Batch Correction</h2>
+            <iframe class="abundance-frame" src="abundance_plot_without_harmony.html"></iframe>
+        </div>
+
+        <!-- B-cell Subset Section -->
+        <h2 class="section-title">B-cell Subset with CD19 Expression</h2>
+        <div class="comparison-container">
+            <h2>B-cell Subset Analysis</h2>
+            <img src="B_cell_subset.png" alt="B-cell Subset Analysis" style="width: 100%; height: auto; border-radius: 4px;">
+        </div>
+
+        <!-- Additional Datasets Section -->
+        <h2 class="section-title">Additional Datasets</h2>
+        <div class="comparison-container">
+            <h2>New Datasets Analysis</h2>
+            <img src="New_datasets.png" alt="Additional Datasets Analysis" style="width: 100%; height: auto; border-radius: 4px;">
+        </div>
+    </div>
+</body>
+</html> 
